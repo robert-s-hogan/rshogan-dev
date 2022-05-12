@@ -28,7 +28,7 @@ const Layout = ({ location, title, children }) => {
       <footer>
         <StaticImage
           className="bio-avatar"
-          layout="fixed"
+          // layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../images/gatsby-icon.png"
           width={50}
