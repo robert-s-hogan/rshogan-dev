@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -25,8 +26,17 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/gatsby-icon.png"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Robert Hogan Logo"
+        />
+        © {new Date().getFullYear()}, Built with &nbsp;
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
     </div>

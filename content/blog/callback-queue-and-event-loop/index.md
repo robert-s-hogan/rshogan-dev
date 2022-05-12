@@ -1,7 +1,7 @@
 ---
 title: Callback Queue and Event Loop
 date: "2022-05-11T20:12:03.284Z"
-description: "This is a post of my understanding of JavaScript's runtime model based on an event loop and the order of processing events, and executing queued sub-tasks."
+description: "This is a post on my understanding of JavaScript's runtime model based on an event loop and the order of processing events, and executing queued sub-tasks."
 ---
 
 Here is the example function I used for this post [Callback Queue and Event Loop Original](./2022-05-11_rshogan-dev.pdf).
@@ -18,7 +18,7 @@ blockFor1Sec()
 console.log("Me First")
 ```
 
-Here is the **Thread of Execution** with and explanation
+Here is the **Thread of Execution** with an explanation
 
 First Line
 
@@ -32,7 +32,7 @@ First Line
 
 > setTimeout(printHello, 0)
 
-1. setTimeout is a Web Browser Feature called **Timer**. When called, the timer starts (0 in this case) and the browser waits for the time (in ms) to complete. Once complete, the function printHello() gets sent to the callback queue and waits for the event loop to send the function printHello() to the **call stack**.
+1. setTimeout is a Web Browser Feature called **Timer**. When called, the timer starts (0 in this case), and the browser waits for the time (in ms) to complete. Once complete, the function printHello() gets sent to the callback queue and waits for the event loop to send the function printHello() to the **call stack**.
 
 > blockFor1Sec() { ... }
 
@@ -42,7 +42,7 @@ First Line
 
 3. the console.log("Me First") runs immediately after the function blockFor1Sec() since the console log is on the next line of the thread of execution.
 
-> function printHello() leaves the callback queu gets added to the call stack by the event loop
+> function printHello() leaves the callback queue gets added to the call stack by the event loop
 
 4. The call stack adds printHello() to the thread of execution and executes the function.
 
@@ -51,10 +51,3 @@ First Line
 > 1ms blockFor1Sec() begins to execute and goes for 1000ms
 > 1001ms console.log("Me First") is printed in the console
 > 1002ms console.log("Hello") is printed in the console
-
-<!-- ![Callback Queue and Event Loop](./2022-05-11_rshogan-dev_function.jpg) -->
-
-<!-- [salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
-
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. -->

@@ -22,6 +22,8 @@ html {
 
 body {
   margin: 0;
+  background-color: rgb(15 23 42);
+  color: white;
 }
 
 /**
@@ -40,6 +42,7 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  color: white;
 }
 
 /* Grouping content
