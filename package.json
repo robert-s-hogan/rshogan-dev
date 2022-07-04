@@ -8,6 +8,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.9.0",
+    "@stripe/stripe-js": "^1.32.0",
     "gatsby": "^4.14.0",
     "gatsby-plugin-feed": "^4.14.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
